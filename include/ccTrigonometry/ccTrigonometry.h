@@ -19,3 +19,21 @@
 //__________________________________________________________________________________//
 
 #pragma once
+
+#include <math.h>
+
+#define ccTriPiQuarter  0.785398
+#define ccTriPiHalf     1.570796
+#define ccTriPi         3.141592
+#define ccTriPiDouble   6.283185
+
+#define ccTriSquared(x) ((x) * (x))
+#define ccTriCubed(x)   ((x) * (x) * (x))
+
+#define ccTriDistance(x1, y1, x2, y2) sqrt(ccTriSquared(x1 - x2) + ccTriSquared(y1 - y2))
+
+float ccTriSinRad(float radians);
+float ccTriCosRad(float radians);
+
+float ccTriSinDeg(unsigned int degrees);
+float ccTriCosDeg(unsigned int degrees);
