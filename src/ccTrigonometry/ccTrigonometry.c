@@ -1,5 +1,7 @@
 #include <ccTrigonometry/ccTrigonometry.h>
 
+#define _CCT_POSITIVE_MOD(x, y) ((x) - (y) * ((x) / (y)))
+
 static float _cctSin[360] = {
 	0.000000f, 0.017452f, 0.034899f, 0.052336f, 0.069756f, 0.087156f, 0.104528f, 0.121869f, 0.139173f, 0.156434f, 0.173648f, 0.190809f,
 	0.207912f, 0.224951f, 0.241922f, 0.258819f, 0.275637f, 0.292372f, 0.309017f, 0.325568f, 0.342020f, 0.358368f, 0.374607f, 0.390731f,
@@ -73,7 +75,7 @@ float ccTriSinRad(float radians)
 
 float ccTriCosRad(float radians)
 {
-	return _cctSin[((unsigned int)ccTriRadToDeg(radians) + 90) % 360];
+	return _cctSin[_CCT_POSITIVE_MOD((unsigned int)ccTriRadToDeg(radians) + 90, 360)];
 }
 
 float ccTriSinDeg(unsigned int degrees)
@@ -83,5 +85,5 @@ float ccTriSinDeg(unsigned int degrees)
 
 float ccTriCosDeg(unsigned int degrees)
 {
-	return _cctSin[(degrees + 90) % 360];
+	return _cctSin[_CCT_POSITIVE_MOD(degrees + 90, 360)];
 }
