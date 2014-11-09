@@ -22,13 +22,16 @@
 
 #include <math.h>
 
-#define ccTriPiQuarter  0.785398
-#define ccTriPiHalf     1.570796
-#define ccTriPi         3.141592
-#define ccTriPiDouble   6.283185
+#define CC_TRI_PI_QUARTER  0.785398
+#define CC_TRI_PI_HALF     1.570796
+#define CC_TRI_PI          3.141593
+#define CC_TRI_PI_DOUBLE   6.283185
 
-#define ccTriSquared(x) ((x) * (x))
-#define ccTriCubed(x)   ((x) * (x) * (x))
+#define ccTriSquared(x)  ((x) * (x))
+#define ccTriCubed(x)    ((x) * (x) * (x))
+
+#define ccTriDegToRad(x) ((x) * 0.017453)
+#define ccTriRadToDeg(x) ((x) * 57.295780)
 
 #define ccTriDistance(x1, y1, x2, y2) sqrt(ccTriSquared(x1 - x2) + ccTriSquared(y1 - y2))
 
