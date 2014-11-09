@@ -1,0 +1,1 @@
+#include <ccTrigonometry/ccTrigonometry.h>
