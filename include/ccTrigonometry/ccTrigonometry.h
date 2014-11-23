@@ -34,9 +34,3 @@
 #define ccTriRadToDeg(x) ((x) * 57.295780)
 
 #define ccTriDistance(x1, y1, x2, y2) sqrt(ccTriSquared(x1 - x2) + ccTriSquared(y1 - y2))
-
-float ccTriSinRad(float radians);
-float ccTriCosRad(float radians);
-
-float ccTriSinDeg(unsigned int degrees);
-float ccTriCosDeg(unsigned int degrees);
