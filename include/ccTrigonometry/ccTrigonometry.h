@@ -28,7 +28,7 @@
 #define CC_TRI_PI_DOUBLE   6.283185
 
 #define ccTriSquared(x)  ((x) * (x))
-#define ccTriCubed(x)    ((x) * (x) * (x))
+#define ccTriCubed(x)    (ccTriSquared(x) * (x))
 
 #define ccTriDegToRad(x) ((x) * 0.017453)
 #define ccTriRadToDeg(x) ((x) * 57.295780)
