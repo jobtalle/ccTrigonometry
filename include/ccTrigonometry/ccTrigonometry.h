@@ -34,3 +34,7 @@
 #define ccTriRadToDeg(x) ((x) * 57.295780)
 
 #define ccTriDistance(x1, y1, x2, y2) sqrt(ccTriSquared(x1 - x2) + ccTriSquared(y1 - y2))
+
+static float ccTriInterpolateLinear(float a, float b, float x);
+static float ccTriInterpolateCosine(float a, float b, float x);
+static float ccTriInterpolateCubic(float a, float b, float c, float d, float x);
