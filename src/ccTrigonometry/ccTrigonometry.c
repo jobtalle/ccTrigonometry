@@ -7,7 +7,7 @@ static float ccTriInterpolateLinear(float a, float b, float x)
 
 static float ccTriInterpolateCosine(float a, float b, float x)
 {
-	float factor = (1.0f - ccTriCosDeg((unsigned int)(x * 180.0f))) * .5f;
+	float factor = (1.0f - cos((unsigned int)(x * 180.0f))) * .5f;
 
 	return a * (1.0f - factor) + b * factor;
 }
