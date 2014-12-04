@@ -18,3 +18,8 @@ float ccTriInterpolateCubic(float a, float b, float c, float d, float x)
 
 	return ccTriCubed(x * p) + ccTriSquared(x * (a - b) - p) + x * (c - a) + b;
 }
+
+float ccTriInterpolateQuadratic(float a, float b, float x)
+{
+	return a + (b - a) * ccTriCubed(x);
+}
