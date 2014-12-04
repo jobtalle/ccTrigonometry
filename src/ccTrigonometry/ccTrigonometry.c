@@ -23,3 +23,8 @@ float ccTriInterpolateQuadratic(float a, float b, float x)
 {
 	return a + (b - a) * ccTriCubed(x);
 }
+
+float ccTriInterpolateQuadraticInverse(float a, float b, float x)
+{
+	return a + (b - a) * (1 - ccTriCubed(1 - x));
+}

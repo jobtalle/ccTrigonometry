@@ -39,3 +39,4 @@ float ccTriInterpolateLinear(float a, float b, float x);
 float ccTriInterpolateCosine(float a, float b, float x);
 float ccTriInterpolateCubic(float a, float b, float c, float d, float x);
 float ccTriInterpolateQuadratic(float a, float b, float x);
+float ccTriInterpolateQuadraticInverse(float a, float b, float x);
