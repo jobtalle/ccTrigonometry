@@ -34,4 +34,6 @@
 #define ccTriDegToRad(x) ((x) * 0.017453)
 #define ccTriRadToDeg(x) ((x) * 57.295780)
 
-#define ccTriDistance(x1, y1, x2, y2) sqrt(ccTriSquared(x1 - x2) + ccTriSquared(y1 - y2))
+#define ccTriDistance(x1, y1, x2, y2) sqrtf(ccTriSquared(x1 - x2) + ccTriSquared(y1 - y2))
+
+void ccTriInterpRadPoly(float *value, float target, float factor);
