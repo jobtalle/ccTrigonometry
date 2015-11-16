@@ -1,17 +1,44 @@
 #include <ccTrigonometry/ccTrigonometry.h>
 
-void ccTriInterpRadPoly(float *value, float target, float factor)
+// Clamp
+
+void ccTriClampRad(float *value)
 {
-	float delta = target - *value;
+	for(; *value < -CC_TRI_PI_F; *value += CC_TRI_PI_DOUBLE_F);
+	for(; *value > CC_TRI_PI_F; *value -= CC_TRI_PI_DOUBLE_F);
+}
 
-	if(delta < -(float)CC_TRI_PI) {
-		*value -= (float)CC_TRI_PI_DOUBLE;
-		delta = target - *value;
+void ccTriClampf(float *value, float low, float high)
+{
+	if(*value < low) {
+		*value = low;
 	}
-	else if(delta >(float)CC_TRI_PI) {
-		*value += (float)CC_TRI_PI_DOUBLE;
-		delta = target - *value;
+	else if(*value > high) {
+		*value = high;
 	}
+}
 
-	*value += delta * factor;
+// Delta
+
+float ccTriDeltaRad(float a, float b)
+{
+	float delta = a - b;
+
+	ccTriClampRad(&delta);
+
+	return delta;
+}
+
+// Lerp
+
+// Perp
+
+void ccTriPerpRad(float *value, float target, float factor)
+{
+	*value += ccTriDeltaRad(target, *value) * factor;
+}
+
+void ccTriPerpf(float *value, float target, float factor)
+{
+	*value += (target - *value) * factor;
 }

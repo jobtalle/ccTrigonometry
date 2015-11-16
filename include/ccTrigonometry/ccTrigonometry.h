@@ -23,10 +23,17 @@
 
 #include <math.h>
 
-#define CC_TRI_PI_QUARTER  0.785398
-#define CC_TRI_PI_HALF     1.570796
-#define CC_TRI_PI          3.141593
-#define CC_TRI_PI_DOUBLE   6.283185
+#define CC_TRI_PI_QUARTER    0.785398
+#define CC_TRI_PI_QUARTER_F  0.785398f
+#define CC_TRI_PI_HALF       1.570796
+#define CC_TRI_PI_HALF_F     1.570796f
+#define CC_TRI_PI            3.141593
+#define CC_TRI_PI_F          3.141593f
+#define CC_TRI_PI_DOUBLE     6.283185
+#define CC_TRI_PI_DOUBLE_F   6.283185f
+
+#define CC_TRI_PHI           1.618034
+#define CC_TRI_PHI_F         1.618034f
 
 #define ccTriSquared(x)  ((x) * (x))
 #define ccTriCubed(x)    (ccTriSquared(x) * (x))
@@ -36,4 +43,10 @@
 
 #define ccTriDistance(x1, y1, x2, y2) sqrtf(ccTriSquared(x1 - x2) + ccTriSquared(y1 - y2))
 
-void ccTriInterpRadPoly(float *value, float target, float factor);
+void ccTriClampRad(float *value);
+void ccTriClampf(float *value, float low, float high);
+
+float ccTriDeltaRad(float a, float b);
+
+void ccTriPerpRad(float *value, float target, float factor);
+void ccTriPerpf(float *value, float target, float factor);
